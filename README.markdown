@@ -1,5 +1,8 @@
-[Heroku Buildpack kong](https://github.com/heroku/heroku-buildpack-kong) updated with Kong 0.13 and Openresty 1.13.6.1
+Heroku Buildpack Kong 0.13 Openresty 1.13.6.1
 =========================
+
+[Heroku Buildpack](https://github.com/heroku/heroku-buildpack-kong) updated with Kong 0.13 and Openresty 1.13.6.1
+
 
 [Heroku Buildpack](https://devcenter.heroku.com/articles/buildpacks) for [Kong](https://getkong.org/about/)
 
