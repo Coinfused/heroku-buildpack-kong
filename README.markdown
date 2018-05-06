@@ -1,5 +1,8 @@
-[Heroku Buildpack](https://devcenter.heroku.com/articles/buildpacks) for [Kong](https://getkong.org/about/)
+[Heroku Buildpack kong](https://github.com/heroku/heroku-buildpack-kong) updated with Kong 0.13 and Openresty 1.13.6.1
 =========================
+
+[Heroku Buildpack](https://devcenter.heroku.com/articles/buildpacks) for [Kong](https://getkong.org/about/)
+
 Deploy [Kong 0.11 Community Edition](https://konghq.com/kong-community-edition/) as a Heroku app.
 
 🌈 This buildpack now deploys genuine Mashape Kong, [built from source on Github](bin/compile#L226); patches are no longer required for compatibility with Heroku.
@@ -43,7 +46,7 @@ git push heroku master
   * [Kong plugins](https://getkong.org/plugins/)
     * [Development guide](https://getkong.org/docs/0.11.x/plugin-development/)
     * `lib/kong/plugins/{NAME}`
-    * Add each Kong plugin name to the `custom_plugins` comma-separated list in `config/kong.conf.etlua` 
+    * Add each Kong plugin name to the `custom_plugins` comma-separated list in `config/kong.conf.etlua`
     * See: [Plugin File Structure](https://getkong.org/docs/0.11.x/plugin-development/file-structure/)
   * Lua rocks
     * specify in the app's `Rockfile`
@@ -68,7 +71,7 @@ git push heroku master
 
 To use env vars within your own code.
 
-  1. Whitelist the variable name for use within Nginx 
+  1. Whitelist the variable name for use within Nginx
      * In a custom Nginx config file add `env MY_VARIABLE;`
      * See: [Nginx config](#user-content-nginx-config) (below)
   2. Access the variable in Lua plugins
