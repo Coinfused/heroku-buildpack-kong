@@ -3,46 +3,33 @@ Heroku Buildpack Kong 0.13 Openresty 1.13.6.1
 
 [Heroku Buildpack](https://github.com/heroku/heroku-buildpack-kong) updated with Kong 0.13 and Openresty 1.13.6.1
 
-
-[Heroku Buildpack](https://devcenter.heroku.com/articles/buildpacks) for [Kong](https://getkong.org/about/)
-
-Deploy [Kong 0.11 Community Edition](https://konghq.com/kong-community-edition/) as a Heroku app.
-
-🌈 This buildpack now deploys genuine Mashape Kong, [built from source on Github](bin/compile#L226); patches are no longer required for compatibility with Heroku.
-
-🔬👩‍💻 This software is a community proof-of-concept: [MIT license](LICENSE)
-
-
 Usage
 -----
-
-### Example
-
-Deploy the [heroku-kong app](https://github.com/heroku/heroku-kong) to get started.
-
 ### Custom
 
 Create a new git repo and Heroku app:
 
 ```bash
+git clone https://github.com/coinfused/heroku-buildpack-kong.git
 APP_NAME=my-kong-gateway # name this something unique for your app
 mkdir $APP_NAME
 cd $APP_NAME
 git init
 heroku create $APP_NAME
-heroku buildpacks:set https://github.com/heroku/heroku-buildpack-kong.git
+heroku buildpacks:set https://github.com/coinfused/heroku-buildpack-kong.git
 heroku addons:create heroku-postgresql:hobby-dev
 ```
+
 
 Create the file `config/kong.conf.etlua` based on the [sample config file](config/kong.conf.etlua.sample). This is a config template which generates `config/kong.conf` at runtime.
 
 ```bash
 git add config/kong.conf.etlua
-git commit -m '🐒'
+git commit -m 'first commit'
 git push heroku master
 ```
 
-🚀 Check `heroku logs` and `heroku open` to verify Kong launches.
+ Check `heroku logs` and `heroku open` to verify Kong launches.
 
 #### Plugins & other Lua source
 
